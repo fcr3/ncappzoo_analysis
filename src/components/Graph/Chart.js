@@ -4,6 +4,7 @@ import { scaleBand, scaleLinear } from 'd3-scale'
 // import data from '../../data'
 import Axes from './Axes'
 import Circles from './Circles'
+import Lines from './Lines'
 import ResponsiveWrapper from './ResponsiveWrapper'
 import Tooltip from './Tooltip'
 import './Chart.css'
@@ -47,9 +48,14 @@ class Chart extends Component {
             margins={margins}
             svgDimensions={svgDimensions}
           />
-        <Circles
+          <Lines
             scales={{ xScale, yScale }}
             data={data}
+          />
+          <Circles
+            scales={{ xScale, yScale }}
+            data={data}
+            hoveredCirc={this.state.hoveredCirc}
             onMouseOverCallback={datum => this.setState({hoveredCirc: datum})}
             onMouseOutCallback={datum => this.setState({hoveredCirc: null})}
           />
