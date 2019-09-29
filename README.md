@@ -1,3 +1,20 @@
+# ncappzoo analysis tool
+
+## Includes:
+
+1. Python Script for Generating JSON and CSV Files based on Github Traffic
+2. Web interface for Viewing/Interacting (In the works)
+
+## Requirements for the Python Script
+
+Please install the `pandas` library. I use this to convert from json to csv :)
+
+## Web Interface
+
+Link will be provided by project is done :)
+
+______
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
