@@ -46,6 +46,22 @@ def main(user, password, type_of_req):
     # Writing CSV
     df.to_csv(file_name + '.csv', index=False)
     
+    # Creating New Master Files
+    old_file = 'master_tables/master_' + type_of_req + '_table.csv'
+    old_master = pd.read_csv(old_file)
+    new_master = old_master.append(df).groupby('timestamp', sort=True).agg('first')
+    master_csv_name = 'master_tables/master_' + type_of_req + '_table'
+    new_master.reset_index().to_csv(master_csv_name + '.csv', index=False)
+    
+    counts = data['count']
+    uniques = data['uniques']
+    old_master_sum = pd.read_csv('master_tables/master_' + type_of_req + '_summary.csv')
+    new_master_sum_dict = [{'collection_timestamp': str(today_dt), 'counts': counts, 'uniques': uniques}]
+    new_master_sum = pd.DataFrame(master_views_summary_dict)
+    new_master_sum = old_master_sum.append(new_master_sum).groupby('collection_timestamp').agg('first')
+    master_csv_summary_name = 'master_tables/master_' + type_of_req + '_summary'
+    new_master_sum.to_csv(master_csv_summary_name + '.csv', index=False)
+    
 if __name__ == "__main__":
     args = createArgs()
     main(args.user, args.password, 'views')
