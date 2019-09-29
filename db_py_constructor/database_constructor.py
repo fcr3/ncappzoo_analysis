@@ -14,8 +14,9 @@ def createArgs():
 def main(user, password, type_of_req):
     auth = user + ':' + password
     url = 'https://api.github.com/repos/movidius/ncappzoo/traffic/' + type_of_req
-    
-    today = '_'.join(str(dt.datetime.today()).split(' '))
+
+    today_dt = dt.datetime.today()
+    today = '_'.join(str(today_dt).split(' '))
     today = '-'.join(str(today.split('.')[0]).split(':'))
     folder_name = 'ncappzoo_' + type_of_req + '_' + today
     file_name = folder_name + '/' + 'ncappzoo_' + type_of_req + '_' + today
@@ -57,10 +58,10 @@ def main(user, password, type_of_req):
     uniques = data['uniques']
     old_master_sum = pd.read_csv('master_tables/master_' + type_of_req + '_summary.csv')
     new_master_sum_dict = [{'collection_timestamp': str(today_dt), 'counts': counts, 'uniques': uniques}]
-    new_master_sum = pd.DataFrame(master_views_summary_dict)
+    new_master_sum = pd.DataFrame(new_master_sum_dict)
     new_master_sum = old_master_sum.append(new_master_sum).groupby('collection_timestamp').agg('first')
     master_csv_summary_name = 'master_tables/master_' + type_of_req + '_summary'
-    new_master_sum.to_csv(master_csv_summary_name + '.csv', index=False)
+    new_master_sum.reset_index().to_csv(master_csv_summary_name + '.csv', index=False)
     
 if __name__ == "__main__":
     args = createArgs()
