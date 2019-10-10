@@ -2,16 +2,15 @@
 
 ## Includes:
 
-1. Python Script for Generating JSON and CSV Files based on Github Traffic
-2. Web interface for Viewing/Interacting (In the works)
+1. Python Script for Generating JSON and CSV Files
+2. Jupyter Notebook for Visualizing Trends in Data
 
 ## Requirements for the Python Script
 
-Please install the `pandas` library. I use this to convert from json to csv :)
-
-## Web Interface
-
-Link will be provided by project is done :)
+- Pandas
+- Plotly
+- Scikit-Learn
+- Scipy
 
 ______
 
