@@ -12,6 +12,12 @@
 - Scikit-Learn
 - Scipy
 
+
+### Command to Install Required Packages
+```
+$ sudo pip3 install pandas scikit-learn scipy
+```
+
 ______
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
