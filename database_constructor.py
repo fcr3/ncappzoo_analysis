@@ -6,10 +6,11 @@ import os
 import argparse
 
 def createArgs():
-    parser = argparse.ArgumentParser(description='Must enter username, token/password, and the path to the base csv')
+    parser = argparse.ArgumentParser(description='Must enter username, token/password, and the path to the base csv for views and clones')
     parser.add_argument('-u', '--user', type=str)
     parser.add_argument('-p', '--password', type=str)
-    parser.add_argument('-o', '--old_ref_path', type=str)
+    parser.add_argument('-oc', '--old_ref_path_clones', type=str)
+	parser.add_argument('-ov', '--old_ref_path_views', type=str)
     return parser.parse_args()
 
 def grabNewDataAndStoreCSV(user, token, kind):
@@ -71,11 +72,11 @@ if __name__ == "__main__":
     args = createArgs()
     
     new_file = grabNewDataAndStoreCSV(args.user, args.password,'views')
-    old_ref = args.old_ref_path
+    old_ref = args.old_ref_path_clones
     new_ref_views = construct_new_ref(old_ref, new_file, 'views')
     
     new_file = grabNewDataAndStoreCSV(args.user, args.password,'clones')
-    old_ref = args.old_ref_path
+    old_ref = args.old_ref_path_views
     new_ref_clones = construct_new_ref(old_ref, new_file, 'clones')
     
     print('New Clones Reference File:', new_ref_clones)
