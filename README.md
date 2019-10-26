@@ -19,13 +19,13 @@ $ sudo pip3 install pandas scikit-learn scipy
 ```
 
 ### Using scripts to build database
-`database_constructor.py` <br/>
+`database_constructor.py` <br/> <br/>
 Parameters: <br/>
 `-u`: username <br/>
 `-p`: password <br/>
 `-oc`: path to a reference table for clones <br/>
 `-ov`: path to a reference table for views <br/>
-<br/><br/>
+<br/>
 Output: 
 - outputs json and csv files for current data pulled from github
 - outputs csv file that builds upon reference file using current data
