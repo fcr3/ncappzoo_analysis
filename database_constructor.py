@@ -19,7 +19,7 @@ def grabNewDataAndStoreCSV(user, token, kind):
     today_dt = dt.datetime.today()
     today = '_'.join(str(today_dt).split(' '))
     today = '-'.join(str(today.split('.')[0]).split(':'))
-    folder_name = 'ncappzoo_' + kind + '_' + today
+    folder_name = 'past_collected_data/ncappzoo_' + kind + '_' + today
     file_name = folder_name + '/' + 'ncappzoo_' + kind + '_' + today
 
     os.mkdir(folder_name)
@@ -67,7 +67,7 @@ def construct_new_ref(old_file_path, new_file_path, kind):
     today_dt = dt.datetime.today()
     today = '_'.join(str(today_dt).split(' '))
     today = '-'.join(str(today.split('.')[0]).split(':'))
-    file_name = 'temp/updated_' + kind + '_' + today
+    file_name = 'master_tables/updated_' + kind + '_' + today
     csv_string = new_master.to_csv(file_name + '.csv', index=False)
     return file_name + '.csv'
     
