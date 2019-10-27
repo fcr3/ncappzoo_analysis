@@ -54,6 +54,9 @@ def construct_new_ref(old_file_path, new_file_path, kind):
     dys = [x for x in new_df['day'].values]
     new_df['yr_mo_day'] = [dt.datetime(yrs[i], mos[i], dys[i]) for i in range(len(yrs))]
     
+    # Reorder columsn for both dfs for alignment
+    new_df = new_df[old_master_df.columns.values]
+    
     # Construction of new ref
     new_master = old_master_df.append(new_df).groupby('timestamp').max().reset_index()
     yrs = [x for x in new_master['yr'].values]
