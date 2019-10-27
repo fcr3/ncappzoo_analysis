@@ -7,15 +7,17 @@
 
 ## Requirements for the Python Script
 
+- Numpy
 - Pandas
 - Plotly
 - Scikit-Learn
 - Scipy
+- Statsmodels
 
 
 ### Command to Install Required Packages
 ```
-$ sudo pip3 install pandas scikit-learn scipy
+$ sudo pip3 install numpy pandas scikit-learn scipy statsmodels
 ```
 
 ## Using scripts to build database
@@ -40,6 +42,7 @@ Output:
 
 ### What you see:
 - Plot of actual data
-- Plot of trend line
+- Plot of Simple Regression line
+- Plot of LOWESS line
 - Ability to zoom in and zoom out on certain parts of data
 - Ability to download a png image of the graph to use elsewhere
