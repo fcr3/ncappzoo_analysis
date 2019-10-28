@@ -13,11 +13,11 @@
 - Scikit-Learn
 - Scipy
 - Statsmodels
-
+- PyGithub
 
 ### Command to Install Required Packages
 ```
-$ sudo pip3 install numpy pandas scikit-learn scipy statsmodels
+$ sudo pip3 install numpy pandas scikit-learn scipy statsmodels PyGithub
 ```
 
 ## Using scripts to build database
