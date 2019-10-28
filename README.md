@@ -23,7 +23,7 @@ $ sudo pip3 install numpy pandas scikit-learn scipy statsmodels PyGithub
 ```
 
 ## Using scripts to build database
-`database_constructor.py` <br/> <br/>
+`database_constructor.py` or `database_constructor-v2.py` <br/> <br/>
 Parameters: <br/>
 `-u`: username <br/>
 `-p`: password <br/>
@@ -33,6 +33,8 @@ Parameters: <br/>
 Output:
 - outputs json and csv files for current data pulled from github
 - outputs csv file that builds upon reference file using current data
+
+*Note: v2 uses PyGithub, which grabs the json data using requests rather than curl*
 
 ## Viewing Graph Trends
 `Graph_Visuals.ipynb`
