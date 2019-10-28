@@ -23,7 +23,7 @@ $ sudo pip3 install numpy pandas scikit-learn scipy statsmodels PyGithub
 ```
 
 ## Using scripts to build database
-`database_constructor.py` or `database_constructor-v2.py` <br/> <br/>
+`database_constructor.py` or `database_constructor_v2.py` <br/> <br/>
 Parameters: <br/>
 `-u`: username <br/>
 `-p`: password <br/>
