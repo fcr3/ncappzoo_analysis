@@ -1,4 +1,6 @@
-# ncappzoo analysis tool
+# Ncappzoo Analysis Tool
+
+![Graphs](./graphics/graph_pngs/README.png)
 
 ## Includes:
 
@@ -28,7 +30,7 @@ Parameters: <br/>
 `-oc`: path to a reference table for clones <br/>
 `-ov`: path to a reference table for views <br/>
 <br/>
-Output: 
+Output:
 - outputs json and csv files for current data pulled from github
 - outputs csv file that builds upon reference file using current data
 
